@@ -53,6 +53,9 @@ class _LoginPageState extends State<LoginPage> {
                   // labelText: "Username",
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
               TextField(
                 // textAlign: TextAlign.center,
                 autofocus: false,
