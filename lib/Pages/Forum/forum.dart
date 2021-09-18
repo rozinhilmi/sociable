@@ -36,13 +36,14 @@ class _ForumPageState extends State<ForumPage> {
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(builder: (context){
-              return AddNewForumPage();
+              return 
+                NewForumPage();
             }
             )
             );
           },
           child: Container(
-            child: Icon(Icons.add_circle_outline,size: 50,color: Colors.blue,),
+            child: Icon(Icons.add,size: 40,color: Colors.blue,),
             width: 150,
             height: 150,
             decoration: BoxDecoration(
