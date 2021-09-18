@@ -72,26 +72,6 @@ class _MainPageState extends State<MainPage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                  return AddNewForumPage();
-                  }
-                )
-              );
-            },
-            child: Container(
-                child: Icon(Icons.add_circle_outline,size: 50,color: Colors.blue,),
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-
-                  borderRadius: BorderRadius.circular(40),
-                  color: Colors.white
-                ),
-            ),
-          ),
         bottomNavigationBar: Container(
           width: double.infinity,
           height: 50,
@@ -128,11 +108,6 @@ class _MainPageState extends State<MainPage> {
                       size: 32,
                       color: widget.page2Style,
                   )
-              ),
-              Container(
-                width: 15,
-                height: 45,
-
               ),
               IconButton(
                   onPressed: (){
