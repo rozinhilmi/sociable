@@ -121,7 +121,7 @@ class HasilDiagnosaKedua extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(builder: (context) {
-                                      return ForumPage();
+                                      return MainPage();
                                     }));
                                   },
                                 ),
