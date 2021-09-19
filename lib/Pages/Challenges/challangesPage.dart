@@ -62,7 +62,7 @@ class ChallengesPage extends StatelessWidget {
                         labelStyle: TextStyle(fontWeight: FontWeight.bold),
                         unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
                         indicator : BoxDecoration(
-                            color: Colors.white30
+                            color: Colors.amber
                         ),
                         tabs: myTab
                     )
