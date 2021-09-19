@@ -32,7 +32,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
           padding: EdgeInsets.only(right: 30, left: 30,top: 50),
           child: ListView(
             children: [
-              Image.asset("assets/images/logo.png",height: 181,),
               Text("Registrasi",style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -47,11 +46,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Username",
                   // labelText: "Username",
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               TextField(
                 autofocus: false,
@@ -60,11 +62,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Email",
                   // labelText: "Username",
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               TextField(
                 // textAlign: TextAlign.center,
@@ -75,7 +80,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Password",
                   suffixIcon: IconButton(
@@ -94,6 +99,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 15,
+              ),
               TextField(
                 autofocus: false,
                 onChanged: (ValueKey) {
@@ -101,11 +109,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Tanggal Lahir",
                   // labelText: "Username",
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               TextField(
                 autofocus: false,
@@ -114,11 +125,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Nomor Telepon +62",
                   // labelText: "Username",
                 ),
+              ),
+              SizedBox(
+                height: 15,
               ),
               DropdownButton<String>(
                 hint: Text(jenisKelaminInput),
@@ -135,6 +149,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 onChanged: (_) {
 
                 },
+              ),
+              SizedBox(
+                height: 15,
               ),
               Builder(
                 builder: (context) => Container(
