@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
 
                   hintText: "Username",
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)
+                      borderRadius: BorderRadius.circular(40)
                   ),
                   hintText: "Password",
                   suffixIcon: IconButton(
