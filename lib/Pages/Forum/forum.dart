@@ -37,7 +37,7 @@ class _ForumPageState extends State<ForumPage> {
           onPressed: (){
             Navigator.of(context).push(MaterialPageRoute(builder: (context){
               return 
-                NewForumPage();
+                AddNewForumPage();
             }
             )
             );
