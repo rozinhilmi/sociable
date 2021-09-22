@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CommentItem extends StatelessWidget {
@@ -7,21 +8,28 @@ class CommentItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String imageUrl = "assets/images/person.png";
-    String isoComment = "ini String komentar";
+    String author = "Budi";
+    String isiComment = "ini String komentar";
     return Row(
       children: [
-        CircleAvatar(
-          backgroundImage: AssetImage("assets/images/person.png"),
-        ),
         Flexible(
           fit: FlexFit.tight,
           child: Card(
             margin: EdgeInsets.only(top:10,left: 10,right: 10),
+            shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.grey,width: 1),
+              borderRadius: BorderRadius.circular(15),
+            ),
             child: Container(
               padding: EdgeInsets.all(10),
-              color: Colors.white,
-              child: Text("ini komentar"),
+              color: Color.fromRGBO(240, 240, 241, 100),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(author,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+                  Text(isiComment),
+                ],
+              ),
             ),
           ),
         ),
