@@ -12,6 +12,7 @@ class AddNewForumPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -24,7 +25,7 @@ class AddNewForumPage extends StatelessWidget {
                     },
                     icon: Icon(Icons.arrow_back,color: Colors.black,size: 30,),
                   ),
-                  Text("Add New Forum",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
+                  Text("ADD NEW FORUM",style: TextStyle(color: Colors.black,fontSize: 25),),
                 ],
               ),
             ],
@@ -50,7 +51,10 @@ class AddNewForumPage extends StatelessWidget {
                   topikInput = ValueKey;
                 },
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(22),
+                      borderSide: BorderSide(color: Colors.grey,width: 0.5)
+                  ),
                   hintText: "Topik Pembahasan",
                 ),
               ),
@@ -58,14 +62,17 @@ class AddNewForumPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(right: 15, left: 15, bottom: 10),
               child: TextField(
-                maxLines: 27,
+                maxLines: 15,
                 // textAlign: TextAlign.center,
                 autofocus: true,
                 onChanged: (ValueKey) {
                   forumInput = ValueKey;
                 },
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(color: Colors.grey,width: 0.5)
+                  ),
                   hintText: "Input Forum",
                 ),
               ),

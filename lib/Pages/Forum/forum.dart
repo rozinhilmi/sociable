@@ -54,11 +54,12 @@ class _ForumPageState extends State<ForumPage> {
           ),
         ),
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Forum",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
+              Text("FORUM",style: TextStyle(color: Colors.black,fontSize: 25),),
 
 
               Row(

@@ -31,10 +31,25 @@ class _ForumItemState extends State<ForumItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15)
+      ),
       margin: EdgeInsets.only(top:10,left: 10,right: 10),
       child: Container(
-        padding: EdgeInsets.all(10),
-        color: Colors.white,
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 30,
+              offset: Offset(0, 6), // changes position of shadow
+            ),
+          ],
+        ),
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -98,7 +113,7 @@ class _ForumItemState extends State<ForumItem> {
                                   }
                                 });
                               },
-                              icon: Icon(Icons.thumb_up,color: Colors.red,)
+                              icon: Icon(Icons.thumb_up,color: Colors.blue,)
                           ),
                         Text(widget.jumlahLike.toString(),style: TextStyle(color: Colors.black),)
                       ],

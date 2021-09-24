@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:sociable/Pages/Registrasi/hasilDiagnosaDua.dart';
 import 'hasilDiagnosa.dart';
 
 class DiagnosaPage extends StatelessWidget {
@@ -76,7 +76,9 @@ class DiagnosaPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Center(child: Text("Apakah anda adalah seorang yang takut pada figur otoritas?",textAlign: TextAlign.center,style: TextStyle(fontSize: 24),),)
+                        Container(
+                            padding: EdgeInsets.symmetric(vertical: 0,horizontal: 20),
+                            child: Center(child: Text("Apakah anda adalah seorang yang takut pada figur otoritas?",textAlign: TextAlign.center,style: TextStyle(fontSize: 24),),))
                       ],
                     ),
                   ),
@@ -84,24 +86,24 @@ class DiagnosaPage extends StatelessWidget {
               ),
 
               Container(
-                margin: EdgeInsets.only(top: 28,left: 10,right: 10,),
+
+                margin: EdgeInsets.only(top: 28,left: 34,right: 34,),
+                padding: const EdgeInsets.only(top: 24),
                 // width: 400
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(26),
                     // color: Colors.blue
                     color: Color.fromARGB(40,255, 255, 255)
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 24,bottom: 31),
-                  child: Row(
+                child: Row(
 
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Button_Input(1,"Sangat Tidak Terganggu"),
-                      Button_Input(2,"Tidak Terganggu"),
-                      Button_Input(3,"biasa"),
-                      Button_Input(4,"terganggu"),
-                      Button_Input(5,"sangat terganggu"),
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Button_Input(0,"Sangat Tidak Terganggu"),
+                    Button_Input(1,"Tidak Terganggu"),
+                    Button_Input(2,"biasa"),
+                    Button_Input(3,"terganggu"),
+                    Button_Input(4,"sangat terganggu"),
 
 
 
@@ -110,8 +112,7 @@ class DiagnosaPage extends StatelessWidget {
 
 
 
-                    ],
-                  ),
+                  ],
                 ),
               ),
             ],
@@ -125,9 +126,6 @@ class DiagnosaPage extends StatelessWidget {
 class Button_Input extends StatelessWidget {
   int value;
   final String value_string;
-  // const Button_Input({
-  //   Key? key,
-  // }) : super(key: key);
 
   Button_Input(this.value,this.value_string);
 
@@ -144,17 +142,22 @@ class Button_Input extends StatelessWidget {
               // return MainPage();
             }));
           },
-          child: Text(value.toString(),style: TextStyle(fontSize: 24,color: Colors.black),),
+          child: Text(value.toString(),style: TextStyle(fontSize: 18,color: Colors.black),),
           style: ElevatedButton.styleFrom(
+
             shape: CircleBorder(),
-            padding: EdgeInsets.all(20),
+
+            padding: EdgeInsets.all(15),
             primary: Colors.white, // <-- Button color
             onPrimary: Colors.blue, // <-- Splash color
           ),
 
         ),
 
-        Container(width: 50,height: 90,child: Text(value_string,textAlign: TextAlign.center,))
+        Container(
+            width: 50,height: 90,
+            margin: EdgeInsets.only(top: 10),
+            child: Text(value_string,textAlign: TextAlign.center,style: TextStyle(fontSize: 10),))
       ],
     );
   }

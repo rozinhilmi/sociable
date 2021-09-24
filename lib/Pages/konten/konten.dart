@@ -14,11 +14,12 @@ class _KontenPageState extends State<KontenPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.white,
+          elevation: 0,
+          backgroundColor: Colors.white,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Konten",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
+              Text("KONTEN",style: TextStyle(color: Colors.black,fontSize: 25),),
 
               
             ],
@@ -88,13 +89,16 @@ class _KontenPageState extends State<KontenPage> {
                 SizedBox(height: 20,),
                 Column(
                   children: [
-                    VideoContentItem("url_thumbnail_video","5 tips berkenalan dengan orang baru","premium","url_video"),
-                    VideoContentItem("url_thumbnail_video","tips agar tidak baperan","basic","url_video"),
-                    VideoContentItem("url_thumbnail_video","tips hidup sehat","premium","url_video"),
-                    VideoContentItem("url_thumbnail_video","tetap positive thinking","basic","url_video"),
-                    VideoContentItem("url_thumbnail_video","cara menaham emosi","premium","url_video"),
-                    VideoContentItem("url_thumbnail_video","cara bersikap dewasa","basic","url_video"),
-                    VideoContentItem("url_thumbnail_video","gatau apalagi","premium","url_video"),
+                    // VideoContentItem("url thumbnai","title","is premium","url video"),
+
+
+                    VideoContentItem("assets/images/konten_slide2.jpeg","5 tips berkenalan dengan orang baru","Premium","url_video"),
+                    VideoContentItem("assets/images/konten_slide1.jpeg","tips agar tidak baperan","Basic","url_video"),
+                    VideoContentItem("assets/images/konten_slide2.jpeg","tips hidup sehat","Premium","url_video"),
+                    VideoContentItem("assets/images/konten_slide1.jpeg","tetap positive thinking","Basic","url_video"),
+                    VideoContentItem("assets/images/konten_slide2.jpeg","cara menaham emosi","Premium","url_video"),
+                    VideoContentItem("assets/images/konten_slide1.jpeg","cara bersikap dewasa","Basic","url_video"),
+                    VideoContentItem("assets/images/konten_slide2.jpeg","gatau apalagi","Premium","url_video"),
                   ],
                 )
 

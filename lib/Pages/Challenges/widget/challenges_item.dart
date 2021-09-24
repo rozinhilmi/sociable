@@ -22,6 +22,9 @@ class ChallengesItem extends StatelessWidget {
           }));
         },
         child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15)
+          ),
           margin: EdgeInsets.all(10),
           child: Container(
             padding: EdgeInsets.all(10),

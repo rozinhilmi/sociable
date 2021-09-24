@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../MainPage.dart';
 
-class HasilDiagnosa extends StatelessWidget {
+class HasilDiagnosaDua extends StatelessWidget {
   // const HasilDiagnosaDua({Key? key}) : super(key: key);
 
   @override
@@ -16,29 +16,51 @@ class HasilDiagnosa extends StatelessWidget {
           title: Center(child: Text("HASIL DIAGNOSA",style: TextStyle(fontSize: 20,color: Colors.black),)),
         ),
 
-        body: Stack(
+        body: Column(
           children: [
-            Container(margin: EdgeInsets.only(top: 40),child: Image.asset("assets/images/joinAs.png",height: 280,)),
 
             Container(
-              margin: EdgeInsets.only(left: 185,top: 80),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              width: double.infinity,
+              height: 200,
+              margin: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(right: 28),
+              // color: Colors.green,
+              child: Row(
+
                 children: [
-                  Text("Hai [nama User]",textAlign: TextAlign.start,style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),),
-                  SizedBox(height: 10,),
-                  Text(""
-                    "Berdasarkan hasil diagnosa kami, kamu bukan termasuk orang yang mengidap Social Anxiety Disorder (SAD) loh.",
-                    style: TextStyle(fontSize: 15,color: Colors.black,),)
+                  Image.asset("assets/images/vector1.png", height: 320,),
+
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.only(left: 10,),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Hai [nama User]",textAlign: TextAlign.start,style: TextStyle(fontSize: 25,color: Colors.black,fontWeight: FontWeight.bold),),
+                          SizedBox(height: 10,),
+                          Text(""
+                              "Berdasarkan hasil diagnosa kami, kamu termasuk orang yang mengidap Social Anxiety Disorder (SAD) dalam kategori [kategori] loh.",
+                            style: TextStyle(fontSize: 15,color: Colors.black,),)
+                        ],
+                      ),
+                    ),
+                  ),
+
                 ],
               ),
             ),
+
+            // Image.asset("assets/images/vector1.png",
+            //   height: 320,),
+            //
+
 
 
             Flexible(
                 fit: FlexFit.tight,
                 child: Container(
-                  margin: EdgeInsets.only(top: 220),
+                  margin: EdgeInsets.only(top: 0),
                   padding: EdgeInsets.only(right: 5,left: 5,top: 20),
                   width: double.infinity,
                   height: 500,
@@ -63,16 +85,16 @@ class HasilDiagnosa extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                              width: 110,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(image: AssetImage("assets/images/chalange.png"),fit: BoxFit.cover),
-
-                              ),
+                            width: 110,
+                            height: 200,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(image: AssetImage("assets/images/chalange.png"),fit: BoxFit.cover),
 
                             ),
+
+                          ),
                           Container(
                             width: 110,
                             height: 200,

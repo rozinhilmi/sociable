@@ -21,7 +21,16 @@ class SearchLayout extends StatelessWidget {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40)
                       ),
-                      prefixIcon: Icon(Icons.search),
+                      prefixIcon: IconButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        },
+                        icon: Icon(Icons.arrow_back),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.search),
+                      ),
                       hintText: "search",
                       // labelText: "Username",
                     ),

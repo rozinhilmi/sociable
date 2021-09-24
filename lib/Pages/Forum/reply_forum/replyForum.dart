@@ -21,6 +21,7 @@ class _ReplyForumPageState extends State<ReplyForumPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.white,
           title: Row(
             children: [
@@ -30,87 +31,85 @@ class _ReplyForumPageState extends State<ReplyForumPage> {
                 },
                 icon: Icon(Icons.arrow_back,color: Colors.black,size: 30,),
               ),
-              Text("Forum",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 25),),
+              Text("FORUM",style: TextStyle(color: Colors.black,fontSize: 25),),
             ],
           ),
         ),
-        body: Container(
+        body: ListView(
           padding: EdgeInsets.all(10),
-          child: ListView(
-            children: [
-              Card(
-                margin: EdgeInsets.only(top:10,left: 10,right: 10),
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  color: Colors.white,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Budi Hartono",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16
+          children: [
+            Card(
+              margin: EdgeInsets.only(left: 10,right: 10),
+              child: Container(
+                padding: EdgeInsets.all(10),
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Budi Hartono",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16
 
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 8),
+                          padding: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(230, 245, 245, 1)
+                          ),
+                          child: Text("Bully",style: TextStyle(color: Colors.blue),),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5,),
+                    Text(value),
+                    SizedBox(height: 5,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.white
+                                ),
+                                onPressed: (){
+                                  setState(() {
+                                    jumlahLike += 1;
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.thumb_up,color: Colors.black,),
+                                    Text(jumlahLike.toString(),style: TextStyle(color: Colors.black),)
+                                  ],
+                                )
                             ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 8),
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                                color: Color.fromRGBO(230, 245, 245, 1)
-                            ),
-                            child: Text("Bully",style: TextStyle(color: Colors.blue),),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 5,),
-                      Text(value),
-                      SizedBox(height: 5,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                      primary: Colors.white
-                                  ),
-                                  onPressed: (){
-                                    setState(() {
-                                      jumlahLike += 1;
-                                    });
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.thumb_up,color: Colors.black,),
-                                      Text(jumlahLike.toString(),style: TextStyle(color: Colors.black),)
-                                    ],
-                                  )
-                              ),
-                              SizedBox(width:5),
+                            SizedBox(width:5),
 
-                            ],
-                          ),
+                          ],
+                        ),
 
-                          Text(waktuPost)
-                        ],
-                      )
-                    ],
-                  ),
-
+                        Text(waktuPost)
+                      ],
+                    )
+                  ],
                 ),
+
               ),
-              SizedBox(height: 18,),
+            ),
+            SizedBox(height: 18,),
 
 
 
-              for(int i=0; i<20; i++)
-                CommentItem(  20 )// id item)
-            ],
-          ),
+            for(int i=0; i<20; i++)
+              CommentItem(  20 )// id item)
+          ],
         ),
       ),
     );
