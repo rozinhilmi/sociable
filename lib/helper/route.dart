@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sociable/Pages/Login/loginPage.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:sociable/MainPage.dart';
+import 'package:sociable/Pages/Auth/Login/loginPage.dart';
+import 'package:sociable/Pages/Auth/Registrasi/registrationPage.dart';
 import 'package:sociable/Pages/splash.dart';
 
 class Routes {
   static const String SPLASH = '/splash';
   static const String LOGIN = '/login';
+  static const String REGISTER = '/register';
+  static const String HOME = '/home';
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case SPLASH:
         return MaterialPageRoute(builder: (_) => SplashScreen());
       case LOGIN:
-      // return PageTransition(child: LoginPage(), type: PageTransitionType.leftToRight);
-      // case ADD_BERITA:
-      //   return PageTransition(child: TambahBerita(), type: PageTransitionType.leftToRight);
-      // case ROOM_KONSUL:
-      //   return PageTransition(child: DetailChat(), type: PageTransitionType.leftToRight);
+        return PageTransition(child: LoginPage(), type: PageTransitionType.leftToRight);
+      case REGISTER:
+        return PageTransition(child: RegistrationPage(), type: PageTransitionType.leftToRight);
+      case HOME:
+        return PageTransition(child: MainPage(), type: PageTransitionType.leftToRight);
       // case TAB:
       //   return PageTransition(
       //       child: Tabs(

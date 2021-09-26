@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sociable/helper/appConfig.dart';
 import 'package:sociable/helper/route.dart';
-import 'Pages/Login/loginPage.dart';
-
-
 void main() {
   MyApp.initSystemDefault();
 
@@ -17,11 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var initialRoute = AppConfig.of(context).initialRoute;
     return MaterialApp(
-      // theme: ThemeData(
-      //   textTheme: GoogleFonts.latoTextTheme(
-      //     Theme.of(context).textTheme,
-      //   ),
-      // ),
+      theme: ThemeData(
+        textTheme: GoogleFonts.latoTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.generateRoute,
       initialRoute: initialRoute,
