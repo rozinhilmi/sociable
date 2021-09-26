@@ -119,4 +119,31 @@ class Config {
       ),
     );
   }
+
+  static formatDateInput(tgl) {
+    try {
+      var date = tgl.split(" ");
+      var bln = [
+        '',
+        'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+      ];
+      var bulan = date[0].toString().split('-');
+      String tanggal =
+          bulan[2] + ' ' + bln[int.parse(bulan[1])] + ' ' + bulan[0];
+      return tanggal;
+    } catch (e) {
+      return tgl.toString();
+    }
+  }
 }
