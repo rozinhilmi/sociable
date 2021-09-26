@@ -35,7 +35,7 @@ class Config {
   static final HexColor total = new HexColor('#7366FF');
   static final HexColor inActif = new HexColor('#E5E5E5');
 
-   // menampilkan loading berupa dialog
+  // menampilkan loading berupa dialog
   static loading(context) {
     showDialog(
         context: context,
@@ -43,14 +43,12 @@ class Config {
         builder: (BuildContext context) {
           return Dialog(
               // backgroundColor: Colors.transparent,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
               child: Container(
                   height: 200.0,
                   width: 200.0,
                   padding: EdgeInsets.all(18),
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
                   child: Column(
                     // crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -71,12 +69,9 @@ class Config {
     return Center(
       child: Column(
         children: <Widget>[
-          Container(
-              width: MediaQuery.of(context).size.width * 0.5,
-              margin: EdgeInsets.only(top: 20, bottom: 10),
-              child: Image.asset('assets/images/illustration/dataKosong.png')),
+          Container(width: MediaQuery.of(context).size.width * 0.5, margin: EdgeInsets.only(top: 20, bottom: 10), child: Image.asset('assets/images/illustration/dataKosong.png')),
           Text(
-            'Belum ada data Prospek',
+            pesan,
             style: GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.bold),
             // style: TextStyle(fontFamily: 'AirbnbMedium'),
           ),
@@ -91,8 +86,7 @@ class Config {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 2,
-        backgroundColor:
-            (tipe == 1 ? Colors.green : Colors.red), // 1 untuk berhasil
+        backgroundColor: (tipe == 1 ? Colors.green : Colors.red), // 1 untuk berhasil
         textColor: Colors.white,
         fontSize: 16.0);
   }
