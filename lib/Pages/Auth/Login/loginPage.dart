@@ -26,7 +26,8 @@ class _LoginPageState extends State<LoginPage> {
     });
     auth.username = txtUsername.text;
     auth.password = txtPassword.text;
-    dynamic respon = await repository.loginProses(auth).then((value) => {auth = value});
+
+    dynamic respon = await repository.detailForum('1').then((value) => {auth = value});
 
     if (respon != null) {
       SharedPreferences pref = await SharedPreferences.getInstance();
@@ -41,12 +42,14 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         Config.alert(1, 'Login berhassil');
         Navigator.pop(context);
-        Navigator.pushNamed(context, Routes.HOME);
+        var data = {'idUser': 1, 'namaUser': "loram ipum"};
+        Navigator.pushNamed(context, Routes.AKUN, arguments: data);
       });
     } else {
       print('object');
       Navigator.pop(context);
     }
+    Config.emptyData('Forum masih kosong', context);
   }
 
   @override
