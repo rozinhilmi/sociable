@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:sociable/Pages/Auth/Login/loginPage.dart';
+import 'package:sociable/helper/pref.dart';
+import 'package:sociable/helper/route.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -24,15 +26,12 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
 
     Future.delayed(Duration(seconds: 3), () async {
       Navigator.of(context).pushReplacement(PageTransition(child: LoginPage(), type: PageTransitionType.fade));
-      // String token = await Config.getToken();
-      // if (token == '' || token == null) {
-      //   Navigator.of(context).pushReplacement(
-      //       PageTransition(child: LoginPage(), type: PageTransitionType.fade));
-      // } else {
-      //   var link = await Config.getdata('link');
-      //   var kodeMenu = await Config.getdata('kode_menu');
-      //   Navigator.pushNamed(context, link, arguments: kodeMenu);
-      // }
+      String token = await Pref.getToken();
+      if (token == '' || token == null) {
+        Navigator.of(context).pushReplacement(PageTransition(child: LoginPage(), type: PageTransitionType.fade));
+      } else {
+        Navigator.pushNamed(context, Routes.HOME);
+      }
     });
   }
 

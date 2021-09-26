@@ -1,4 +1,4 @@
-#Sun Sep 26 08:37:22 WIB 2021
+#Sun Sep 26 12:56:11 WIB 2021
 base.0=/home/prime/Documents/Project/Flutter/sociable/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
