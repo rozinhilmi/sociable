@@ -4,10 +4,14 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sociable/helper/appConfig.dart';
 import 'package:sociable/helper/route.dart';
+
 void main() {
   MyApp.initSystemDefault();
-
-  runApp(AppConfig(appName: "Sociable", flavorName: "dev", initialRoute: Routes.SPLASH, child: MyApp()));
+  runApp(AppConfig(
+      appName: "Sociable",
+      flavorName: "dev",
+      initialRoute: Routes.SPLASH,
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

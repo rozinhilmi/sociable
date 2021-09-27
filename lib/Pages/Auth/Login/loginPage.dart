@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
     auth.username = txtUsername.text;
     auth.password = txtPassword.text;
 
-    dynamic respon = await repository.detailForum('1').then((value) => {auth = value});
+    dynamic respon = await repository.loginProses(auth);
 
     if (respon != null) {
       SharedPreferences pref = await SharedPreferences.getInstance();
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
         Config.alert(1, 'Login berhassil');
         Navigator.pop(context);
         var data = {'idUser': 1, 'namaUser': "loram ipum"};
-        Navigator.pushNamed(context, Routes.AKUN, arguments: data);
+        Navigator.pushNamed(context, Routes.HOME, arguments: data);
       });
     } else {
       print('object');
@@ -58,93 +58,97 @@ class _LoginPageState extends State<LoginPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         // resizeToAvoidBottomInset: false,
-        body: Padding(
-          padding: EdgeInsets.only(right: 30, left: 30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image(
-                image: AssetImage("assets/images/logo.png"),
-                width: 181,
-                height: 195,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextField(
-                autofocus: false,
-                controller: txtUsername,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(right: 30, left: 30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  width: 181,
+                  height: 195,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextField(
+                  autofocus: false,
+                  controller: txtUsername,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(40)),
 
-                  hintText: "Username",
-                  // labelText: "Username",
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextField(
-                // textAlign: TextAlign.center,
-                autofocus: false,
-                obscureText: obsuced,
-                controller: txtPassword,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
-                  hintText: "Password",
-                  suffixIcon: IconButton(
-                    icon: Icon(Icons.remove_red_eye),
-                    onPressed: () {
-                      if (obsuced == true) {
-                        setState(() {
-                          obsuced = false;
-                        });
-                      } else {
-                        setState(() {
-                          obsuced = true;
-                        });
-                      }
-                    },
+                    hintText: "Username",
+                    // labelText: "Username",
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  if (txtUsername.text.isEmpty) {
-                    return Config.alert(0, 'Username tidak boleh kosong');
-                  } else if (txtPassword.text.isEmpty) {
-                    return Config.alert(0, 'Password tidak boleh kosong');
-                  } else {
-                    submitLogin();
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(155, 45),
-                  primary: Config.darkPrimary,
-                  onPrimary: Config.textWhite,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32.0),
+                SizedBox(
+                  height: 15,
+                ),
+                TextField(
+                  // textAlign: TextAlign.center,
+                  autofocus: false,
+                  obscureText: obsuced,
+                  controller: txtPassword,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(40)),
+                    hintText: "Password",
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.remove_red_eye),
+                      onPressed: () {
+                        if (obsuced == true) {
+                          setState(() {
+                            obsuced = false;
+                          });
+                        } else {
+                          setState(() {
+                            obsuced = true;
+                          });
+                        }
+                      },
+                    ),
                   ),
                 ),
-                child: Text(
-                  "Masuk",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              Builder(
-                builder: (context) => Center(
-                  child: FlatButton(
-                    child: Text("Belum Punya Akun?"),
-                    onPressed: () {
-                      Navigator.pushNamed(context, Routes.LOGIN);
-                    },
+                ElevatedButton(
+                  onPressed: () {
+                    if (txtUsername.text.isEmpty) {
+                      return Config.alert(0, 'Username tidak boleh kosong');
+                    } else if (txtPassword.text.isEmpty) {
+                      return Config.alert(0, 'Password tidak boleh kosong');
+                    } else {
+                      submitLogin();
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(155, 45),
+                    primary: Config.darkPrimary,
+                    onPrimary: Config.textWhite,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0),
+                    ),
+                  ),
+                  child: Text(
+                    "Masuk",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-              ),
-            ],
+                Builder(
+                  builder: (context) => Center(
+                    child: FlatButton(
+                      child: Text("Belum Punya Akun?"),
+                      onPressed: () {
+                        Navigator.pushNamed(context, Routes.LOGIN);
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
