@@ -13,15 +13,15 @@ class ForumItem extends StatefulWidget {
   bool isLike;
 
   ForumItem(
-      this.idForum,
-      this.isiForum,
-      this.waktuPosting,
-      this.penulis,
-      this.forumTopik,
-      this.jumlahLike,
-      this.jumlahKomentar,
-      this.isLike,
-      );
+    this.idForum,
+    this.isiForum,
+    this.waktuPosting,
+    this.penulis,
+    this.forumTopik,
+    this.jumlahLike,
+    this.jumlahKomentar,
+    this.isLike,
+  );
 
   @override
   _ForumItemState createState() => _ForumItemState();
@@ -31,10 +31,8 @@ class _ForumItemState extends State<ForumItem> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15)
-      ),
-      margin: EdgeInsets.only(top:10,left: 10,right: 10),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      margin: EdgeInsets.only(top: 10, left: 10, right: 10),
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
@@ -49,7 +47,6 @@ class _ForumItemState extends State<ForumItem> {
             ),
           ],
         ),
-
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,25 +54,26 @@ class _ForumItemState extends State<ForumItem> {
               children: [
                 Text(
                   widget.penulis,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16
-
-                  ),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Container(
                   margin: EdgeInsets.only(left: 8),
                   padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(230, 245, 245, 1)
+                  decoration: BoxDecoration(color: Color.fromRGBO(230, 245, 245, 1)),
+                  child: Text(
+                    widget.forumTopik,
+                    style: TextStyle(color: Colors.blue),
                   ),
-                  child: Text(widget.forumTopik,style: TextStyle(color: Colors.blue),),
                 ),
               ],
             ),
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             Text(widget.isiForum),
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -83,64 +81,70 @@ class _ForumItemState extends State<ForumItem> {
                   children: [
                     Row(
                       children: [
-                        if(widget.isLike == false)
+                        if (widget.isLike == false)
                           IconButton(
-                            onPressed: (){
-                              setState(() {
-                                if(widget.isLike == false){
-                                  widget.jumlahLike += 1;
-                                  widget.isLike = true;
-                                }
-                                else{
-                                  widget.jumlahLike -= 1;
-                                  widget.isLike = false;
-                                }
-                              });
-                            },
-                            icon: Icon(Icons.thumb_up,color: Colors.black,)
-                          )
-                        else
-                          IconButton(
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
-                                  if(widget.isLike == false){
+                                  if (widget.isLike == false) {
                                     widget.jumlahLike += 1;
                                     widget.isLike = true;
-                                  }
-                                  else{
+                                  } else {
                                     widget.jumlahLike -= 1;
                                     widget.isLike = false;
                                   }
                                 });
                               },
-                              icon: Icon(Icons.thumb_up,color: Colors.blue,)
-                          ),
-                        Text(widget.jumlahLike.toString(),style: TextStyle(color: Colors.black),)
+                              icon: Icon(
+                                Icons.thumb_up,
+                                color: Colors.black,
+                              ))
+                        else
+                          IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  if (widget.isLike == false) {
+                                    widget.jumlahLike += 1;
+                                    widget.isLike = true;
+                                  } else {
+                                    widget.jumlahLike -= 1;
+                                    widget.isLike = false;
+                                  }
+                                });
+                              },
+                              icon: Icon(
+                                Icons.thumb_up,
+                                color: Colors.blue,
+                              )),
+                        Text(
+                          widget.jumlahLike.toString(),
+                          style: TextStyle(color: Colors.black),
+                        )
                       ],
                     ),
-                    SizedBox(width:10),
+                    SizedBox(width: 10),
                     Row(
                       children: [
                         IconButton(
-                            onPressed: (){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                                return ReplyForumPage(widget.idForum);
-                              }));
-                            },
-                            icon: Icon(Icons.messenger,color: Colors.black,),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                              return ReplyForumPage(widget.idForum.toString());
+                            }));
+                          },
+                          icon: Icon(
+                            Icons.messenger,
+                            color: Colors.black,
+                          ),
                         ),
-                        Text(widget.jumlahKomentar.toString(),style: TextStyle(color: Colors.black))
+                        Text(widget.jumlahKomentar.toString(), style: TextStyle(color: Colors.black))
                       ],
                     ),
                   ],
                 ),
-
                 Text(widget.waktuPosting)
               ],
             )
           ],
         ),
-
       ),
     );
   }
