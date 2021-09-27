@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SearchLayout extends StatelessWidget {
+  TextEditingController searchInput = new TextEditingController();
   // const SearchLayout({Key? key}) : super(key: key);
 
   @override
@@ -16,6 +17,7 @@ class SearchLayout extends StatelessWidget {
               child: Column(
                 children: [
                   TextField(
+                    controller: searchInput,
                     autofocus: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
