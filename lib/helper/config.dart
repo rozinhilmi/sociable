@@ -69,7 +69,7 @@ class Config {
     return Center(
       child: Column(
         children: <Widget>[
-          Container(width: MediaQuery.of(context).size.width * 0.5, margin: EdgeInsets.only(top: 20, bottom: 10), child: Image.asset('assets/images/illustration/dataKosong.png')),
+          Container(width: MediaQuery.of(context).size.width * 0.5, margin: EdgeInsets.only(top: 20, bottom: 10), child: Image.asset('assets/images/box.png')),
           Text(
             pesan,
             style: GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.bold),
